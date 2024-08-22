@@ -9,6 +9,7 @@ extension CGSize {
     ///   - lhs: A size.
     ///   - rhs: Scale factor.
     /// - Returns: A new instance as a source one multiplied by the factor.
+    @inlinable
     public static func * (lhs: CGSize, rhs: CGFloat) -> CGSize {
         return CGSize(width: lhs.width * rhs, height: lhs.height * rhs)
     }
@@ -19,9 +20,9 @@ extension CGSize {
     ///   - lhs: Scale factor.
     ///   - rhs: A size.
     /// - Returns: A new instance as a source one multiplied by the factor.
+    @inlinable
     public static func * (lhs: CGFloat, rhs: CGSize) -> CGSize {
         return rhs * lhs
     }
-    
 }
 #endif
