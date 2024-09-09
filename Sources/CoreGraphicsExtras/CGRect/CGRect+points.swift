@@ -6,7 +6,13 @@ extension CGRect {
     /// Center of the rectangle.
     @inlinable
     public var center: CGPoint {
-        return CGPoint(x: midX, y: midY)
+        get { CGPoint(x: midX, y: midY) }
+        set {
+            origin = CGPoint(
+                x: newValue.x - size.width / 2,
+                y: newValue.y - size.height / 2
+            )
+        }
     }
     
     /// Top left corner of the rectangle.
