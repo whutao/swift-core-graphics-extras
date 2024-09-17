@@ -1,4 +1,4 @@
-#if canImport(UIKit) && canImport(CoreGraphics)
+#if canImport(UIKit)
 import UIKit
 
 extension CGColor {
