@@ -2,12 +2,21 @@ import CoreGraphics
 
 extension CGRect {
     
-    /// Creates a rectangle with the specified coordiate and size.
+    /// Creates a rectangle with the specified coordiates and size.
     @inlinable
     public init(x: CGFloat, y: CGFloat, size: CGSize) {
         self.init(
             origin: CGPoint(x: x, y: y),
             size: size
+        )
+    }
+    
+    /// Creates a rectangle with the specified origin, width and height.
+    @inlinable
+    public init(origin: CGPoint, width: CGFloat, height: CGFloat) {
+        self.init(
+            origin: origin,
+            size: CGSize(width: width, height: height)
         )
     }
     
@@ -20,6 +29,15 @@ extension CGRect {
                 y: center.y - size.height / 2
             ),
             size: size
+        )
+    }
+    
+    /// Creates a rectangle with the specified center, width and height.
+    @inlinable
+    public init(center: CGPoint, width: CGFloat, height: CGFloat) {
+        self.init(
+            center: center,
+            size: CGSize(width: width, height: height)
         )
     }
     
