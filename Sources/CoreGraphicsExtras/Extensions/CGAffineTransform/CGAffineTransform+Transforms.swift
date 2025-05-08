@@ -4,6 +4,9 @@ extension CGAffineTransform {
     
     /// Returns an affine transformation matrix constructed from a translation vector.
     @inlinable
+    public static func translate(by vector: CGVector) -> CGAffineTransform {
+        return CGAffineTransform(translationX: vector.dx, y: vector.dy)
+    }
     
     /// Returns an affine transformation matrix constructed from translation values.
     @inlinable
@@ -41,3 +44,16 @@ extension CGAffineTransform {
         return scale(x: value, y: value)
     }
 }
+
+#if canImport(SwiftUI)
+import struct SwiftUI.Angle
+
+extension CGAffineTransform {
+    
+    /// Returns an affine transformation matrix constructed from a rotation angle.
+    @inlinable
+    public static func rotate(for angle: Angle) -> CGAffineTransform {
+        return rotate(angle: angle.radians)
+    }
+}
+#endif
