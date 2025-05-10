@@ -2,10 +2,16 @@ import CoreGraphics
 
 extension CGAffineTransform {
     
+    /// Returns an affine transformation matrix constructed from a translation offset.
+    @inlinable
+    public static func translate(by offset: CGSize) -> CGAffineTransform {
+        return translate(x: offset.width, y: offset.width)
+    }
+    
     /// Returns an affine transformation matrix constructed from a translation vector.
     @inlinable
     public static func translate(by vector: CGVector) -> CGAffineTransform {
-        return CGAffineTransform(translationX: vector.dx, y: vector.dy)
+        return translate(x: vector.dx, y: vector.dy)
     }
     
     /// Returns an affine transformation matrix constructed from translation values.
@@ -36,6 +42,18 @@ extension CGAffineTransform {
     @inlinable
     public static func scale(x: CGFloat, y: CGFloat) -> CGAffineTransform {
         return CGAffineTransform(scaleX: x, y: y)
+    }
+    
+    /// Returns an affine transformation matrix constructed from scaling X value.
+    @inlinable
+    public static func scale(x: CGFloat) -> CGAffineTransform {
+        return scale(x: x, y: 1)
+    }
+    
+    /// Returns an affine transformation matrix constructed from scaling Y value.
+    @inlinable
+    public static func scale(y: CGFloat) -> CGAffineTransform {
+        return scale(x: 1, y: y)
     }
     
     /// Returns an affine transformation matrix constructed from scaling values.
