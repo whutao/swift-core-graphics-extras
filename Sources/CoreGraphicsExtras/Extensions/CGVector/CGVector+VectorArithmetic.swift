@@ -12,13 +12,5 @@ extension CGVector: @retroactive VectorArithmetic {
         dx = dx * rhs
         dy = dy * rhs
     }
-    
-    public static func + (lhs: CGVector, rhs: CGVector) -> CGVector {
-        return CGVector(dx: lhs.dx + rhs.dx, dy: lhs.dy + rhs.dy)
-    }
-    
-    public static func - (lhs: CGVector, rhs: CGVector) -> CGVector {
-        return CGVector(dx: lhs.dx - rhs.dx, dy: lhs.dy - rhs.dy)
-    }
 }
 #endif
