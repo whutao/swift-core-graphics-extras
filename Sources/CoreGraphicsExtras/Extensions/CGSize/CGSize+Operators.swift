@@ -23,4 +23,14 @@ extension CGSize {
     public static func * (lhs: CGFloat, rhs: CGSize) -> CGSize {
         return rhs * lhs
     }
+    
+    @inlinable
+    public static func + (lhs: CGSize, rhs: CGSize) -> CGSize {
+        return CGSize(width: lhs.width + rhs.width, height: lhs.height + rhs.height)
+    }
+    
+    @inlinable
+    public static func - (lhs: CGSize, rhs: CGSize) -> CGSize {
+        return CGSize(width: lhs.width - rhs.width, height: lhs.height - rhs.height)
+    }
 }
