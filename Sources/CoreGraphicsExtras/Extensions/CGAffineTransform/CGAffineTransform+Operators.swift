@@ -11,6 +11,7 @@ extension CGAffineTransform {
     ///   - rhs: Second transform.
     /// - Returns: A combination of 2 transforms.
     @inlinable
+    @inline(__always)
     public static func * (lhs: CGAffineTransform, rhs: CGAffineTransform) -> CGAffineTransform {
         return lhs.concatenating(rhs)
     }
