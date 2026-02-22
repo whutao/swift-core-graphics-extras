@@ -1,6 +1,6 @@
 #if canImport(SwiftUI)
 import CoreGraphics
-import protocol SwiftUI.Animatable
+import SwiftUI
 
 extension CGVector: @retroactive Animatable {
     
